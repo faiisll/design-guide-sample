@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Guidlines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body theme="light">
+    <div class="container">
+        <div class="header">
+            <h1>Design Guidelines</h1>
+            <div class="darkmode">
+                <p>Dark Mode</p>
+                <div class="button r center" id="button-1">
+                    <input type="checkbox" class="checkbox" id="darkmode">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main">
+            <div class="left">
+                <h3>Colors</h3>
+                
+                <div class="colors">
+                    <div class="color">
+                        <p>Primary</p>
+                    </div>
+                    <div class="color">
+                        <p>Secondary</p>
+                    </div>
+                    <div class="color">
+                        <p>Text1</p>
+                    </div>
+                    <div class="color">
+                        <p>Text2</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right">
+                <div class="title">
+                    <h3>Typography</h3>
+                    <h3>Poppins</h3>
+                </div>
+                
+                <div class="rules">
+                    <div class="rule"> 
+                        <h1>H1</h1>
+                        <h1>46 px</h1>
+                    </div>
+                    <div class="rule"> 
+                        <h2>H2</h2>
+                        <h2>38 px</h2>
+                    </div>
+                    <div class="rule"> 
+                        <h3>H3</h3>
+                        <h3>30 px</h3>
+                    </div>
+                    <div class="rule"> 
+                        <p>Body</p>
+                        <p>16 px</p>
+                    </div>
+                    <div class="rule"> 
+                        <small>Small</small>
+                        <small>12 px</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let darkModeToggle = document.querySelector("#darkmode");
+    
+
+    setTimeout(function() {
+        let theme = localStorage.getItem("theme");
+        document.body.setAttribute("theme", theme);
+
+        if(theme === "dark"){
+            darkModeToggle.checked = true;
+        }
+    }, 1000)
+
+
+    darkModeToggle.addEventListener('change', function(e){
+        let currentTheme = document.body.getAttribute("theme");
+        
+        if(currentTheme === "light"){
+            document.body.setAttribute("theme", "dark");
+            localStorage.setItem("theme", "dark");
+        }else if(currentTheme === "dark"){
+            document.body.setAttribute("theme", "light");
+            localStorage.setItem("theme", "light");
+        }  
+        
+    })
+
+    
+</script>
+</html>
