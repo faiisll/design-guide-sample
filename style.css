@@ -18,7 +18,7 @@ body[theme=dark]{
 body{
     font-family: 'Poppins', sans-serif;
     --primary: #5758FF;
-    --secondary: #5BE492;
+    --secondary: #FF5045;
     background-color: var(--bg);
     transition: all 0.6s ease-out;
 }
@@ -109,7 +109,7 @@ small{
 }
 
 .color:hover{
-    transform: translateY(-10px);
+    animation: gelatine 0.5s ;
 }
 
 .color:nth-child(1){
@@ -145,6 +145,23 @@ small{
     border-bottom: 1px var(--text2) solid;
 }
 
+.rule:hover > *{
+    animation: tick 0.5s infinite;
+    cursor: default;
+}
+
+@keyframes tick {
+    0%   {opacity: 1;}
+    50%  {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes gelatine {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05); }
+  }
 
 /* darkmode toggle */
 #button-1 .knobs:before{content: '';position: absolute;top: 4px;left: 4px;width: 20px;height: 10px;color: #fff;font-size: 10px;font-weight: bold;text-align: center;line-height: 1;padding: 9px 4px;background-color: #fff;border-radius: 50%;transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.35), 0 10px 10px -5px rgba(0, 0, 0, 0.20);}
